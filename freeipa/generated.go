@@ -101419,7 +101419,7 @@ func (out *Sudorule) UnmarshalJSON(data []byte) error {
 
 	}
 
-	if true {
+	/*	if true {
 		raw := in.Hostmask
 		plainV, plainOk := raw.(string)
 		sliceWrapperV, sliceWrapperOk := raw.([]interface{})
@@ -101453,7 +101453,7 @@ func (out *Sudorule) UnmarshalJSON(data []byte) error {
 			return fmt.Errorf("unexpected value for field Hostmask: %v (%v)", raw, reflect.TypeOf(raw))
 		}
 
-	}
+	}*/
 
 	if in.Externalhost != nil {
 		raw := in.Externalhost
