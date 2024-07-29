@@ -83656,42 +83656,6 @@ func (out *Hbacrule) UnmarshalJSON(data []byte) error {
 
 	}
 
-	/*  if in.Ipaenabledflag != nil {
-	    raw := in.Ipaenabledflag
-	    plainV, plainOk := raw.(bool)
-	    sliceWrapperV, sliceWrapperOk := raw.([]interface{})
-	    var sliceV []bool
-	    sliceOk := sliceWrapperOk
-	    if sliceWrapperOk {
-	      for _, rawItem := range sliceWrapperV {
-
-	        itemV, itemOk := rawItem.(bool)
-
-	        if !itemOk {
-	          sliceOk = false
-	          break
-	        }
-
-	        sliceV = append(sliceV, itemV)
-
-	      }
-	    }
-
-	      if plainOk {
-	        out.Ipaenabledflag = &plainV
-	      } else if sliceOk {
-
-	          if len(sliceV) == 1 {
-	            out.Ipaenabledflag = &sliceV[0]
-	          } else if len(sliceV) > 1 {
-	            return fmt.Errorf("unexpected value for field Ipaenabledflag: %v; expected at most one element", raw)
-	          }
-
-	      } else {
-	        return fmt.Errorf("unexpected value for field Ipaenabledflag: %v (%v)", raw, reflect.TypeOf(raw))
-	      }
-
-	  }*/
 
 	if in.MemberuserUser != nil {
 		raw := in.MemberuserUser
@@ -83797,9 +83761,7 @@ func (out *Hbacrule) UnmarshalJSON(data []byte) error {
 			} else if len(sliceV) > 1 {
 				combinedString := strings.Join(sliceV," ")
 				out.MemberhostHost = &combinedString
-				//return fmt.Errorf("unexpected value for field MemberhostHost: %v; expected at most one element", raw)
 			}
-
 		} else {
 			return fmt.Errorf("unexpected value for field MemberhostHost: %v (%v)", raw, reflect.TypeOf(raw))
 		}
