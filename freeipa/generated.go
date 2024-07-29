@@ -66929,7 +66929,9 @@ func (out *Caacl) UnmarshalJSON(data []byte) error {
 			if len(sliceV) == 1 {
 				out.MemberhostHost = &sliceV[0]
 			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberhostHost: %v; expected at most one element", raw)
+				combinedString := strings.Join(sliceV," ")
+				out.MemberhostHost = &combinedString
+				//return fmt.Errorf("unexpected value for field MemberhostHost: %v; expected at most one element", raw)
 			}
 
 		} else {
@@ -83943,7 +83945,9 @@ func (out *Hbacrule) UnmarshalJSON(data []byte) error {
 			if len(sliceV) == 1 {
 				out.MemberserviceHbacsvc = &sliceV[0]
 			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberserviceHbacsvc: %v; expected at most one element", raw)
+				combinedString := strings.Join(sliceV," ")
+				out.MemberserviceHbacsvc = &combinedString
+				//return fmt.Errorf("unexpected value for field MemberserviceHbacsvc: %v; expected at most one element", raw)
 			}
 
 		} else {
