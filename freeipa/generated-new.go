@@ -83802,13 +83802,11 @@ func (out *Hbacrule) UnmarshalJSON(data []byte) error {
 			if len(sliceV) == 1 {
 				out.MemberhostHost = &sliceV[0]
 			} else if len(sliceV) > 1 {
-				fmt.Println("11111111111111111111111111111111111111")
 				combinedStr := strings.Join(sliceV," ")
 				out.MemberhostHost = &combinedStr
 			}
 
 		} else {
-			fmt.Println("2222222222222222222222222222222")
 			return fmt.Errorf("unexpected value for field MemberhostHost: %v (%v)", raw, reflect.TypeOf(raw))
 		}
 
@@ -101385,7 +101383,6 @@ func (out *Sudorule) UnmarshalJSON(data []byte) error {
 			if len(sliceV) == 1 {
 				out.MemberhostHost = &sliceV[0]
 			} else if len(sliceV) > 1 {
-				fmt.Println("aaaaaaaaaaaaaaaaaaaaaaaaaa")
 				combinedStr := strings.Join(sliceV," ")
 				out.MemberhostHost = &combinedStr
 				//return fmt.Errorf("unexpected value for field MemberhostHost: %v; expected at most one element", raw)
