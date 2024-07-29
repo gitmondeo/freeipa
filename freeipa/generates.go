@@ -104634,14 +104634,14 @@ func (out *User) UnmarshalJSON(data []byte) error {
 		if sliceWrapperOk {
 			for _, rawItem := range sliceWrapperV {
 
-				itemV, itemOk := rawItem.(time.Time)
-
+				itemV, itemOk := rawItem.(map[string]interface{})
 				if !itemOk {
 					sliceOk = false
 					break
 				}
-
-				sliceV = append(sliceV, itemV)
+				itemStr,_ := itemV["__datetime__"].(string)
+				itemTime,_ := time.Parse("20060102150405Z",itemStr)
+				sliceV = append(sliceV, itemTime)
 
 			}
 		}
