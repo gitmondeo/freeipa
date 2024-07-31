@@ -86224,7 +86224,9 @@ func (out *Host) UnmarshalJSON(data []byte) error {
 			if len(sliceV) == 1 {
 				out.MemberofindirectHbacrule = &sliceV[0]
 			} else if len(sliceV) > 1 {
-				return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
+				combinedString := strings.Join(sliceV," ")
+				out.MemberofindirectHbacrule = &combinedString
+				//return fmt.Errorf("unexpected value for field MemberofindirectHbacrule: %v; expected at most one element", raw)
 			}
 
 		} else {
