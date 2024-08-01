@@ -76748,16 +76748,13 @@ func (out *Dnsrecord) UnmarshalJSON(data []byte) error {
 		sliceOk := sliceWrapperOk
 		if sliceWrapperOk {
 			for _, rawItem := range sliceWrapperV {
-
-				itemV, itemOk := rawItem.(string)
-
+				itemV, itemOk := rawItem.(map[string]interface{})
 				if !itemOk {
 					sliceOk = false
 					break
 				}
-
-				sliceV = append(sliceV, itemV)
-
+				itemStr,_ := itemV["__dns_name__"].(string)
+				sliceV = append(sliceV, itemStr)
 			}
 		}
 
